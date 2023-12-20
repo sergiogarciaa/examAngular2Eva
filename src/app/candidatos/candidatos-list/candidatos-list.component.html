@@ -1,0 +1,9 @@
+<div *ngIf="candidatos.length > 0">
+    <h4 class="text-white">Listado de Candidatos</h4>
+    <hr class="border-white">
+    <ul>
+      <li *ngFor="let candidato of candidatos" class="text-white">
+        <button routerLink="editar-candidato/:id{{candidato.id}}" class="btn btn-danger margen">Editar</button>  {{ candidato.nombre }} - {{ candidato.apellido }} - {{ candidato.email }} - {{candidato.direccion}} - {{candidato.telefono}} - {{candidato.fechaNacimiento}} - {{candidato.dni}}
+      </li>
+    </ul>
+  </div>

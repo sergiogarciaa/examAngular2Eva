@@ -1,0 +1,46 @@
+<div class="container">
+    <h4 [class.d-none]="nuevo">Puesto</h4>
+    <h4 [class.d-none]="!nuevo" class="text-white">Nuevo Puesto</h4>
+    <form #puestoForm="ngForm" (ngSubmit)="nuevoPuesto()">
+      <input
+        type="text"
+        class="d-none"
+        (value)="puesto.puesto"
+        name="puesto"
+      />
+      <div class="form-group">
+        <label class="text-white">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="puesto"
+          #faCtrl="ngModel"
+          [(ngModel)]="puesto.puesto"
+          placeholder="Nombre()"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label class="text-white">Empresa</label>
+        <input
+        type="text"
+        class="form-control"
+        name="Empresa"
+        #faCtrl="ngModel"
+        [(ngModel)]="puesto.empresa"
+        placeholder="Empresa()"
+        required
+      />
+      </div>
+      <div class="form-group float-right">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!puestoForm.valid"
+        >
+          <i class="bi bi-plus">Registrar Puesto</i>
+        </button>
+      </div>
+    </form>
+  </div>

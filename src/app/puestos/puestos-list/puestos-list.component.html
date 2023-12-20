@@ -1,0 +1,9 @@
+<div *ngIf="puestos.length > 0">
+    <h4 class="text-white">Listado de Candidatos</h4>
+    <hr class="border-white">
+    <ul>
+      <li *ngFor="let puesto of puestos" class="text-white">
+          {{ puesto.puesto }} - {{ puesto.disponible }} - {{ puesto.empresa }}
+      </li>
+    </ul>
+  </div>
